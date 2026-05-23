@@ -9,7 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Thief extends Actor
 {
     private String direction ="";
-    
+    int speed = 2;
+    SimpleTimer animationTimer = new SimpleTimer();
     
     
     //constructor
@@ -24,6 +25,15 @@ public class Thief extends Actor
     public void act()
     {
         // Add your action code here.
-        if(
+        animateThief();
+    }
+    
+    public void animateThief()
+    {
+        if(animationTimer.millisElapsed() < 150)
+        {
+            return;
+        }
+        animationTimer.mark();
     }
 }
