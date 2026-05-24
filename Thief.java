@@ -49,9 +49,27 @@ public class Thief extends Actor
     public void moveUp()
     {
         for(int i = 0; i < 3; i++) {
-            upSprites[i] = new GreenfootImage("images/theif/up" + (i + 1) + ".png");
+            upSprites[i] = new GreenfootImage("images/thief/up" + (i + 1) + ".png");
             upSprites[i].scale(72,96);
-            
         }
+        setImage(upSprites[imageIndex]);
+    }
+    
+    public void moveDown()
+    {
+        for(int i = 0; i < 3; i++) {
+            downSprites[i] = new GreenfootImage("images/thief/front" + (i + 1) + ".png");
+            downSprites[i].scale(72,96);
+        }
+        setImage(downSprites[imageIndex]);
+    }
+    
+    public void moveLeft()
+    {
+        for(int i = 0; i < 3; i++) {
+            leftSprites[i] = new GreenfootImage("images/thief/left" + (i + 1) + ".png");
+            leftSprites[i].scale(72,96);
+        }
+        setImage(leftSprites[imageIndex]);
     }
 }
