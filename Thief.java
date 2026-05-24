@@ -27,6 +27,7 @@ public class Thief extends Actor
     public void act()
     {
         // Add your action code here.
+        movement();
         animateThief();
     }
     
@@ -43,6 +44,27 @@ public class Thief extends Actor
         imageIndex++;
         if(imageIndex >= 3) {
             imageIndex = 0;
+        }
+    }
+    
+    public void movement()
+    {
+        if(Greenfoot.isKeyDown("up"))
+        {
+            setLocation(getX(),getY() - speed);
+            moveUp();
+        } else if(Greenfoot.isKeyDown("down"))
+        {
+            setLocation(getX(), getY() + speed);
+            moveDown();
+        } else if(Greenfoot.isKeyDown("left"))
+        {
+            setLocation(getX() - speed, getY());
+            moveLeft();
+        } else if(Greenfoot.isKeyDown("right"))
+        {
+            setLocation(getX() + speed, getY());
+            moveRight();
         }
     }
     
@@ -71,5 +93,14 @@ public class Thief extends Actor
             leftSprites[i].scale(72,96);
         }
         setImage(leftSprites[imageIndex]);
+    }
+    
+     public void moveRight()
+    {
+        for(int i = 0; i < 3; i++) {
+            rightSprites[i] = new GreenfootImage("images/thief/right" + (i + 1) + ".png");
+            rightSprites[i].scale(72,96);
+        }
+        setImage(rightSprites[imageIndex]);
     }
 }
