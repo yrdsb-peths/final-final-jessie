@@ -15,7 +15,7 @@ public class Thief extends Actor
     GreenfootImage[] downSprites = new GreenfootImage[3];
     GreenfootImage[] leftSprites = new GreenfootImage[3];
     GreenfootImage[] rightSprites = new GreenfootImage[3];
-    
+    private int lives = 3;
     boolean hasTreasure = false;
     //constructor
     
@@ -120,6 +120,21 @@ public class Thief extends Actor
     public void checkLaser()
     {
         if(isTouching(Laser.class))
+        {
+            loseLife();
+        }
+    }
+    
+    public int getLives()
+    {
+        return lives;
+    }
+    public void loseLife()
+    {
+        lives--;
+        System.out.println("You lost a live! Lives remain: " + lives);
+        
+        if(lives <= 0)
         {
             MyWorld world = (MyWorld) getWorld();
             world.gameOver();

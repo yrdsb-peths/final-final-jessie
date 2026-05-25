@@ -6,7 +6,8 @@ public class MyWorld extends World {
         
         Thief thief = new Thief();
         addObject(thief, 70, 200);
-        
+        showText("Lives: " + thief.getLives(), 70, 70);
+
         Diamond diamond1 = new Diamond();
         
         addObject(diamond1, 737, 317);
