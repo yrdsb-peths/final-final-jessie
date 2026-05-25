@@ -15,6 +15,8 @@ public class Thief extends Actor
     GreenfootImage[] downSprites = new GreenfootImage[3];
     GreenfootImage[] leftSprites = new GreenfootImage[3];
     GreenfootImage[] rightSprites = new GreenfootImage[3];
+    
+    boolean hasTreasure = false;
     //constructor
     
     public Thief()
@@ -28,6 +30,7 @@ public class Thief extends Actor
     {
         // Add your action code here.
         movement();
+        getTreasure();
         animateThief();
     }
     
@@ -102,5 +105,14 @@ public class Thief extends Actor
             rightSprites[i].scale(72,96);
         }
         setImage(rightSprites[imageIndex]);
+    }
+    
+    public void getTreasure()
+    {
+        if(isTouching(Diamond.class))
+        {
+            removeTouching(Diamond.class);
+            hasTreasure = true;
+        }
     }
 }
