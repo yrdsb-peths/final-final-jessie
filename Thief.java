@@ -32,6 +32,7 @@ public class Thief extends Actor
         movement();
         getTreasure();
         animateThief();
+        checkLaser();
     }
     
     int imageIndex = 0;
@@ -113,6 +114,15 @@ public class Thief extends Actor
         {
             removeTouching(Diamond.class);
             hasTreasure = true;
+        }
+    }
+    
+    public void checkLaser()
+    {
+        if(isTouching(Laser.class))
+        {
+            MyWorld world = (MyWorld) getWorld();
+            world.gameOver();
         }
     }
 }
