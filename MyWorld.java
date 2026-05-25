@@ -10,5 +10,8 @@ public class MyWorld extends World {
         Diamond diamond1 = new Diamond();
         
         addObject(diamond1, 737, 317);
+        
+        YellowLaser yL = new YellowLaser();
+        addObject(yL, 200,70);
     }
 }
