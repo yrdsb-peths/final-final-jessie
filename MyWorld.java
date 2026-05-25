@@ -12,6 +12,12 @@ public class MyWorld extends World {
         addObject(diamond1, 737, 317);
         
         YellowLaser yL = new YellowLaser();
-        addObject(yL, 200,70);
+        addObject(yL, 230,130);
+    }
+    
+    public void gameOver()
+    {
+        showText("GAME OVER!", getWidth(), getHeight()/2);
+        Greenfoot.stop();
     }
 }
