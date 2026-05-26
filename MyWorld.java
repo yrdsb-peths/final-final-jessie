@@ -28,10 +28,13 @@ public class MyWorld extends World {
             shootLaser();
             yellowLaserTimer = 0;
         }
+        
+        Thief thief = (Thief) getObjects(Thief.class).get(0);
+        showText("Lives: " + thief.getLives(), 50, 15);
     }
     public void gameOver()
     {
-        showText("GAME OVER!", getWidth(), getHeight()/2);
+        showText("GAME OVER!", getWidth()/2, getHeight()/2);
         Greenfoot.stop();
     }
     

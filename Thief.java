@@ -132,9 +132,7 @@ public class Thief extends Actor
     public void loseLife()
     {
         lives--;
-        setLocation(70, 200); //spawn
-        System.out.println("You lost a live! Lives remain: " + lives);
-        
+        setLocation(70, 200); //spawn        
         if(lives <= 0)
         {
             MyWorld world = (MyWorld) getWorld();
