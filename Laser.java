@@ -15,15 +15,6 @@ public class Laser extends Actor
     public void act()
     {
         // Add your action code here.
-        checkPlayer();
     }
-    public void checkPlayer()
-    {
-        if(isTouching(Thief.class))
-        {
-            Thief thief = (Thief)getOneIntersectingObject(Thief.class);
-            
-            thief.loseLife();
-        }
-    }
+
 }
