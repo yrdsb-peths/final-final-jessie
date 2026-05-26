@@ -12,6 +12,8 @@ public class YellowLaser extends Laser
      * Act - do whatever the YellowLaser wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
+    int speed = 3;
     public YellowLaser()
     {
         GreenfootImage yellow = new GreenfootImage("yellowLaser.png");
@@ -21,5 +23,13 @@ public class YellowLaser extends Laser
     public void act()
     {
         // Add your action code here.
+    
     }
+    
+    public void move()
+    {
+        
+    }
+    
+    
 }
