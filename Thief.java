@@ -10,6 +10,7 @@ public class Thief extends Actor
 {
     private String direction ="";
     int speed = 2;
+    SimpleTimer loseLifeTimer = new SimpleTimer();
     SimpleTimer animationTimer = new SimpleTimer();
     GreenfootImage[] upSprites = new GreenfootImage[3];
     GreenfootImage[] downSprites = new GreenfootImage[3];
@@ -119,9 +120,11 @@ public class Thief extends Actor
     
     public void checkLaser()
     {
-        if(isTouching(Laser.class))
+        if(isTouching(Laser.class) && loseLifeTimer.millisElapsed() > 500)
         {
+            removeTouching(Laser.class);
             loseLife();
+            loseLifeTimer.mark();
         }
     }
     

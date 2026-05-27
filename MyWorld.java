@@ -23,7 +23,7 @@ public class MyWorld extends World {
     {
         yellowLaserTimer++;
         
-        if(yellowLaserTimer >= 120)
+        if(yellowLaserTimer >= 100)
         {
             shootLaser();
             yellowLaserTimer = 0;
@@ -34,6 +34,8 @@ public class MyWorld extends World {
     }
     public void gameOver()
     {
+        Thief thief = (Thief) getObjects(Thief.class).get(0);
+        showText("Lives: " + thief.getLives(), 50, 15);
         showText("GAME OVER!", getWidth()/2, getHeight()/2);
         Greenfoot.stop();
     }
