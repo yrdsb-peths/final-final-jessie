@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Thief extends Actor
 {
     private String direction ="";
-    int speed = 2;
+    int speed = 3;
     SimpleTimer loseLifeTimer = new SimpleTimer();
     SimpleTimer animationTimer = new SimpleTimer();
     GreenfootImage[] upSprites = new GreenfootImage[3];
@@ -22,9 +22,28 @@ public class Thief extends Actor
     
     public Thief()
     {
-        GreenfootImage iniThief = new GreenfootImage("images/thief/front2.png");
-        iniThief.scale(72,96);
-        setImage(iniThief);
+        //Up
+        for(int i = 0; i < 3; i++) {
+            upSprites[i] = new GreenfootImage("images/thief/up" + (i + 1) + ".png");
+            upSprites[i].scale(72,96);
+        }
+        //Down
+        for(int i = 0; i < 3; i++) {
+            downSprites[i] = new GreenfootImage("images/thief/front" + (i + 1) + ".png");
+            downSprites[i].scale(72,96);
+        }
+        //left
+         for(int i = 0; i < 3; i++) {
+            leftSprites[i] = new GreenfootImage("images/thief/left" + (i + 1) + ".png");
+            leftSprites[i].scale(72,96);
+        }
+        //right
+        for(int i = 0; i < 3; i++) {
+            rightSprites[i] = new GreenfootImage("images/thief/right" + (i + 1) + ".png");
+            rightSprites[i].scale(72,96);
+        }
+        
+        setImage(downSprites[1]);
     }
     
     public void act()
@@ -75,37 +94,21 @@ public class Thief extends Actor
     
     public void moveUp()
     {
-        for(int i = 0; i < 3; i++) {
-            upSprites[i] = new GreenfootImage("images/thief/up" + (i + 1) + ".png");
-            upSprites[i].scale(72,96);
-        }
         setImage(upSprites[imageIndex]);
     }
     
     public void moveDown()
     {
-        for(int i = 0; i < 3; i++) {
-            downSprites[i] = new GreenfootImage("images/thief/front" + (i + 1) + ".png");
-            downSprites[i].scale(72,96);
-        }
         setImage(downSprites[imageIndex]);
     }
     
     public void moveLeft()
     {
-        for(int i = 0; i < 3; i++) {
-            leftSprites[i] = new GreenfootImage("images/thief/left" + (i + 1) + ".png");
-            leftSprites[i].scale(72,96);
-        }
         setImage(leftSprites[imageIndex]);
     }
     
      public void moveRight()
     {
-        for(int i = 0; i < 3; i++) {
-            rightSprites[i] = new GreenfootImage("images/thief/right" + (i + 1) + ".png");
-            rightSprites[i].scale(72,96);
-        }
         setImage(rightSprites[imageIndex]);
     }
     
@@ -120,9 +123,10 @@ public class Thief extends Actor
     
     public void checkLaser()
     {
-        if(isTouching(Laser.class) && loseLifeTimer.millisElapsed() > 500)
+        Actor laser = getOneIntersectingObject(Laser.class);
+        
+        if(laser != null && loseLifeTimer.millisElapsed() > 500)
         {
-            removeTouching(Laser.class);
             loseLife();
             loseLifeTimer.mark();
         }

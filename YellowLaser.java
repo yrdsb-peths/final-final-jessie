@@ -13,7 +13,7 @@ public class YellowLaser extends Laser
     public YellowLaser()
     {
         GreenfootImage yellow = new GreenfootImage("yellowLaser.png");
-        yellow.scale(100,100);
+        yellow.scale(60,60);
         setImage(yellow);
     }
     public void act()
