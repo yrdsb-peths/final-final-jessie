@@ -17,6 +17,10 @@ public class MyWorld extends World {
         addObject(yL, 230,130);
         yL.setRotation(90);
         
+        
+        BlueLaser blue = new BlueLaser();
+        addObject(blue,600,100);
+        blue.setRotation(90);
     }
     
     public void act()
