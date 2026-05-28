@@ -35,6 +35,8 @@ public class MyWorld extends World {
         
         Thief thief = (Thief) getObjects(Thief.class).get(0);
         showText("Lives: " + thief.getLives(), 50, 15);
+        
+        mouseLocation();
     }
     public void gameOver()
     {
@@ -49,5 +51,16 @@ public class MyWorld extends World {
         YellowLaser laser = new YellowLaser();
         addObject(laser, 230, 130);
         laser.setRotation(90);
+    }
+    
+    public void mouseLocation()
+    {
+        MouseInfo mouse = Greenfoot.getMouseInfo();
+        if(mouse != null)
+        {
+            int x = mouse.getX();
+            int y = mouse.getY();
+             showText("(" + x + ", " + y + ")", x + 50, y);
+        }
     }
 }
