@@ -19,7 +19,7 @@ public class MyWorld extends World {
         
         
         BlueLaser blue = new BlueLaser();
-        addObject(blue,600,100);
+        addObject(blue,395,185);
         blue.setRotation(90);
     }
     
@@ -60,7 +60,7 @@ public class MyWorld extends World {
         {
             int x = mouse.getX();
             int y = mouse.getY();
-             showText("(" + x + ", " + y + ")", x + 50, y);
+             showText("(" + x + ", " + y + ")", 750, 50);
         }
     }
 }
