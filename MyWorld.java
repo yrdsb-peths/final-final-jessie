@@ -2,6 +2,8 @@ import greenfoot.*;
 
 public class MyWorld extends World {
     int yellowLaserTimer = 0;
+    int redLaserTimer = 0;
+    
     public MyWorld() {
         super(800, 600, 1);
         
@@ -32,6 +34,11 @@ public class MyWorld extends World {
         blue4.getImage().scale(280,59);
         blue4.setRotation(270);
         addObject(blue4, 480, 445);
+        
+        //creating red lasers
+        RedLaser rd = new RedLaser();
+        rd.setRotation(90);
+        addObject(rd, 605, 215);
     }
     
     public void act()
@@ -48,6 +55,15 @@ public class MyWorld extends World {
         showText("Lives: " + thief.getLives(), 50, 15);
         
         mouseLocation();
+        
+        redLaserTimer++;
+        // laser disappear & reappear every 8 seconds
+        if(redLaserTimer >= 480)
+        {
+            createRedLaser();
+            
+            redLaserTimer = 0;
+        }
     }
     public void gameOver()
     {
@@ -73,5 +89,12 @@ public class MyWorld extends World {
             int y = mouse.getY();
              showText("(" + x + ", " + y + ")", 750, 50);
         }
+    }
+    
+    public void createRedLaser()
+    {
+        RedLaser red  = new RedLaser();
+        addObject(red, 613,195);
+        red.setRotation(90);
     }
 }
