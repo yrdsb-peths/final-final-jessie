@@ -17,10 +17,21 @@ public class MyWorld extends World {
         addObject(yL, 230,130);
         yL.setRotation(90);
         
-        
-        BlueLaser blue = new BlueLaser();
-        addObject(blue,395,185);
-        blue.setRotation(90);
+        //creating blue lasers
+        BlueLaser blue1 = new BlueLaser();
+        addObject(blue1,395,185);
+        blue1.setRotation(90);
+        BlueLaser blue2 = new BlueLaser();
+        addObject(blue2, 391, 475);
+        blue2.setRotation(270);
+        BlueLaser blue3 = new BlueLaser();
+        blue3.getImage().scale(150,59);
+        blue3.setRotation(90);
+        addObject(blue3, 485, 155);
+        BlueLaser blue4 = new BlueLaser();
+        blue4.getImage().scale(280,59);
+        blue4.setRotation(270);
+        addObject(blue4, 480, 445);
     }
     
     public void act()
