@@ -12,8 +12,10 @@ public class RedLaser extends Laser
     
     public RedLaser()
     {
-        GreenfootImage red = new GreenfootImage("redLaser.png");
-        red.scale(1550,200);
+        GreenfootImage red = new GreenfootImage(20, 360);
+        red.setColor(new Color(255, 0, 0, 180));
+        red.fillRect(0, 0, 20, 360);
+        
         setImage(red);
     }
     

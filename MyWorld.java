@@ -37,8 +37,7 @@ public class MyWorld extends World {
         
         //creating red lasers
         RedLaser rd = new RedLaser();
-        rd.setRotation(90);
-        addObject(rd, 605, 215);
+        addObject(rd, 610, 305);
     }
     
     public void act()
