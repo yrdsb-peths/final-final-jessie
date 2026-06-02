@@ -128,9 +128,9 @@ public class Thief extends Actor
         if(laser != null && loseLifeTimer.millisElapsed() > 500)
         {
             int x = Math.abs(getX() - laser.getX());
-            int y = Math.abs(getY() - laser.getY());
+            //int y = Math.abs(getY() - laser.getY());
             
-            if(x < 60 && y < 60)
+            if(x < 60)
             {
                 loseLife();
                 loseLifeTimer.mark();
