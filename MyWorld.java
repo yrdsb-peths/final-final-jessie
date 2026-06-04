@@ -38,6 +38,10 @@ public class MyWorld extends World {
         //creating red lasers
         RedLaser rd = new RedLaser();
         addObject(rd, 613, 330);
+        
+        //create exit
+        Exit exit = new Exit();
+        addObject(exit, 710,65);
     }
     
     public void act()
