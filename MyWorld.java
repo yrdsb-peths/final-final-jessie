@@ -21,10 +21,10 @@ public class MyWorld extends World {
         
         //creating blue lasers
         BlueLaser blue1 = new BlueLaser();
-        addObject(blue1,395,185);
+        addObject(blue1,395,180);
         blue1.setRotation(90);
         BlueLaser blue2 = new BlueLaser();
-        addObject(blue2, 391, 475);
+        addObject(blue2, 391, 480);
         blue2.setRotation(270);
         BlueLaser blue3 = new BlueLaser();
         blue3.getImage().scale(150,59);
@@ -37,7 +37,7 @@ public class MyWorld extends World {
         
         //creating red lasers
         RedLaser rd = new RedLaser();
-        addObject(rd, 610, 315);
+        addObject(rd, 613, 330);
     }
     
     public void act()
@@ -93,6 +93,6 @@ public class MyWorld extends World {
     public void createRedLaser()
     {
         RedLaser red  = new RedLaser();
-        addObject(red, 610,315);
+        addObject(red, 613,330);
     }
 }
