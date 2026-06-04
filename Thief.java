@@ -53,6 +53,7 @@ public class Thief extends Actor
         getTreasure();
         animateThief();
         checkLaser();
+        checkExit();
     }
     
     int imageIndex = 0;
@@ -161,6 +162,17 @@ public class Thief extends Actor
         {
             MyWorld world = (MyWorld) getWorld();
             world.gameOver();
+        }
+    }
+    
+    public void checkExit()
+    {
+        if(hasTreasure && isTouching(Exit.class))
+        {
+            MyWorld world = (MyWorld)getWorld();
+            world.addObject(new youWin(), 400, 300);
+            world.removeObject(this);
+            Greenfoot.stop();
         }
     }
 }
