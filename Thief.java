@@ -127,7 +127,7 @@ public class Thief extends Actor
         
         if(laser != null && loseLifeTimer.millisElapsed() > 500)
         {
-            int x = Math.abs(getX() - laser.getX());
+            double x = Math.abs(getX() - laser.getX());
             int y = Math.abs(getY() - laser.getY());
             
             boolean touch = false;
@@ -136,7 +136,7 @@ public class Thief extends Actor
                 touch = (x < 15);
             } else if(laser instanceof BlueLaser)
             {
-                touch = (x < 2);
+                touch = (y < 113 && x < 20);
             } else if(laser instanceof YellowLaser)
             {
                 touch = (y < 15);

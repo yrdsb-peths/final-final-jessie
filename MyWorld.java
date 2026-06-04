@@ -29,11 +29,11 @@ public class MyWorld extends World {
         BlueLaser blue3 = new BlueLaser();
         blue3.getImage().scale(150,59);
         blue3.setRotation(90);
-        addObject(blue3, 485, 155);
+        addObject(blue3, 485, 150);
         BlueLaser blue4 = new BlueLaser();
         blue4.getImage().scale(280,59);
         blue4.setRotation(270);
-        addObject(blue4, 480, 445);
+        addObject(blue4, 480, 450);
         
         //creating red lasers
         RedLaser rd = new RedLaser();
