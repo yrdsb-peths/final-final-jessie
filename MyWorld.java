@@ -77,7 +77,8 @@ public class MyWorld extends World {
     {
         Thief thief = (Thief) getObjects(Thief.class).get(0);
         showText("Lives: " + thief.getLives(), 50, 15);
-        showText("GAME OVER!", getWidth()/2, getHeight()/2);
+        GameOver gameover = new GameOver();
+        addObject(gameover, 400, 300);
         Greenfoot.stop();
     }
     
