@@ -3,6 +3,9 @@ import greenfoot.*;
 public class MyWorld extends World {
     int yellowLaserTimer = 0;
     int redLaserTimer = 0;
+    private int timeLeft = 180;
+    
+    private SimpleTimer countDown = new SimpleTimer();
     
     public MyWorld() {
         super(800, 600, 1);
@@ -67,6 +70,8 @@ public class MyWorld extends World {
             
             redLaserTimer = 0;
         }
+        
+        updateCountDown();
     }
     public void gameOver()
     {
@@ -98,5 +103,23 @@ public class MyWorld extends World {
     {
         RedLaser red  = new RedLaser();
         addObject(red, 613,330);
+    }
+    
+    public void updateCountDown(){
+        if(countDown.millisElapsed() >= 1000)
+        {
+            timeLeft--;
+            countDown.mark();
+            
+            int min = timeLeft / 60;
+            int sec = timeLeft % 60;
+            
+            showText(min + ":" + sec, 780, 590);
+            
+            if(timeLeft <= 0)
+            {
+                gameOver();
+            }
+        }
     }
 }
