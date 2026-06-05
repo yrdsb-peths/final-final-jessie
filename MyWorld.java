@@ -45,6 +45,10 @@ public class MyWorld extends World {
         //create exit
         Exit exit = new Exit();
         addObject(exit, 710,65);
+        
+        //create invisible wall
+        Wall wall = new Wall();
+        wall.getImage().scale(20,20);
     }
     
     public void act()
