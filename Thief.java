@@ -10,6 +10,8 @@ public class Thief extends Actor
 {
     private String direction ="";
     int speed = 3;
+    private int oldX;
+    private int oldY;
     SimpleTimer loseLifeTimer = new SimpleTimer();
     SimpleTimer animationTimer = new SimpleTimer();
     GreenfootImage[] upSprites = new GreenfootImage[3];
@@ -74,6 +76,9 @@ public class Thief extends Actor
     
     public void movement()
     {
+        int oldX = getX();
+        int oldY = getY();
+        
         if(Greenfoot.isKeyDown("up"))
         {
             setLocation(getX(),getY() - speed);
@@ -90,6 +95,18 @@ public class Thief extends Actor
         {
             setLocation(getX() + speed, getY());
             moveRight();
+        }
+        
+        if(isTouching(Wall.class))
+        {
+            Actor wall = getOneIntersectingObject(Wall.class);
+            if(wall != null)
+            {
+                int x = Math.abs(getX() - wall.getX());
+                int y = Math.abs(getY() - wall.getY());
+                
+                if(x<
+            }
         }
     }
     

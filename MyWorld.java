@@ -48,7 +48,8 @@ public class MyWorld extends World {
         
         //create invisible wall
         Wall wall = new Wall();
-        wall.getImage().scale(20,20);
+        wall.getImage().scale(656,123);
+        addObject(wall, 328, 62);
     }
     
     public void act()
