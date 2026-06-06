@@ -128,6 +128,7 @@ public class Thief extends Actor
         if(isTouching(Diamond.class))
         {
             removeTouching(Diamond.class);
+            Greenfoot.playSound("collect.mp3");
             hasTreasure = true;
         }
     }
@@ -166,6 +167,8 @@ public class Thief extends Actor
     }
     public void loseLife()
     {
+        
+        Greenfoot.playSound("loseLife.mp3");
         lives--;
         setLocation(70, 200); //spawn        
         if(lives <= 0)

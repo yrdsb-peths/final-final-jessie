@@ -30,7 +30,8 @@ public class GameWorld extends World
         showText("Lives: " + thief.getLives(), 50, 15);
         GameOver gameover = new GameOver();
         addObject(gameover, 400, 300);
-        Greenfoot.stop();
+        Greenfoot.playSound("game-over.mp3");
+        
     }
         
     public void nextLevel()
