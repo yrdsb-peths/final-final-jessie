@@ -99,14 +99,7 @@ public class Thief extends Actor
         
         if(isTouching(Wall.class))
         {
-            Actor wall = getOneIntersectingObject(Wall.class);
-            if(wall != null)
-            {
-                int x = Math.abs(getX() - wall.getX());
-                int y = Math.abs(getY() - wall.getY());
-                
-                if(x<
-            }
+            setLocation(oldX, oldY);
         }
     }
     
@@ -157,7 +150,7 @@ public class Thief extends Actor
                 touch = (y < 113 && x < 20);
             } else if(laser instanceof YellowLaser)
             {
-                touch = (y < 15);
+                touch = (y < 5);
             }
             
             if(touch) {
