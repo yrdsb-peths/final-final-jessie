@@ -170,7 +170,7 @@ public class Thief extends Actor
         setLocation(70, 200); //spawn        
         if(lives <= 0)
         {
-            MyWorld world = (MyWorld) getWorld();
+            GameWorld world = (GameWorld) getWorld();
             world.gameOver();
         }
     }
@@ -179,10 +179,8 @@ public class Thief extends Actor
     {
         if(hasTreasure && isTouching(Exit.class))
         {
-            MyWorld world = (MyWorld)getWorld();
-            world.addObject(new youWin(), 400, 300);
-            world.removeObject(this);
-            Greenfoot.stop();
+            GameWorld world = (GameWorld)getWorld();
+            world.nextLevel();
         }
     }
 }

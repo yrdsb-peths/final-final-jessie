@@ -1,6 +1,6 @@
 import greenfoot.*;
 
-public class Level1 extends World {
+public class Level1 extends GameWorld {
     int yellowLaserTimer = 0;
     int redLaserTimer = 0;
     private int timeLeft = 180;
@@ -127,5 +127,10 @@ public class Level1 extends World {
                 gameOver();
             }
         }
+    }
+    
+    public void nextLevel()
+    {
+        Greenfoot.setWorld(new Level2());
     }
 }
