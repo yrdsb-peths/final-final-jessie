@@ -1,13 +1,13 @@
 import greenfoot.*;
 
-public class MyWorld extends World {
+public class Level1 extends World {
     int yellowLaserTimer = 0;
     int redLaserTimer = 0;
     private int timeLeft = 180;
     
     private SimpleTimer countDown = new SimpleTimer();
     
-    public MyWorld() {
+    public Level1() {
         super(800, 600, 1);
         
         Thief thief = new Thief();
