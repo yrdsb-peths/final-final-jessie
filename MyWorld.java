@@ -36,7 +36,7 @@ public class MyWorld extends World {
         BlueLaser blue4 = new BlueLaser();
         blue4.getImage().scale(280,59);
         blue4.setRotation(270);
-        addObject(blue4, 480, 450);
+        addObject(blue4, 480, 460);
         
         //creating red lasers
         RedLaser rd = new RedLaser();
@@ -48,10 +48,10 @@ public class MyWorld extends World {
         
         //create invisible wall
         Wall wall = new Wall();
-        wall.getImage().scale(656,123);
+        wall.getImage().scale(656,23);
         addObject(wall, 328, 62);
     }
-    
+ 
     public void act()
     {
         yellowLaserTimer++;
