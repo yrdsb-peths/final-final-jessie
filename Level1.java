@@ -39,7 +39,7 @@ public class Level1 extends GameWorld {
         addObject(blue4, 480, 460);
         
         //creating red lasers
-        RedLaser rd = new RedLaser();
+        RedLaser rd = new RedLaser(20,360);
         addObject(rd, 613, 330);
         
         //create exit
@@ -78,36 +78,18 @@ public class Level1 extends GameWorld {
         
         updateCountDown();
     }
-    public void gameOver()
-    {
-        Thief thief = (Thief) getObjects(Thief.class).get(0);
-        showText("Lives: " + thief.getLives(), 50, 15);
-        GameOver gameover = new GameOver();
-        addObject(gameover, 400, 300);
-        Greenfoot.stop();
-    }
     
-       public void shootLaser()
+    public void shootLaser()
     {
         YellowLaser laser = new YellowLaser();
         addObject(laser, 230, 130);
         laser.setRotation(90);
     }
     
-    public void mouseLocation()
-    {
-        MouseInfo mouse = Greenfoot.getMouseInfo();
-        if(mouse != null)
-        {
-            int x = mouse.getX();
-            int y = mouse.getY();
-             showText("(" + x + ", " + y + ")", 750, 50);
-        }
-    }
     
     public void createRedLaser()
     {
-        RedLaser red  = new RedLaser();
+        RedLaser red  = new RedLaser(20, 360);
         addObject(red, 613,330);
     }
     

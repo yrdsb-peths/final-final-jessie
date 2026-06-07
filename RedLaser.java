@@ -10,11 +10,11 @@ public class RedLaser extends Laser
 {
     private int timer = 0;
     
-    public RedLaser()
+    public RedLaser(int width, int height)
     {
-        GreenfootImage red = new GreenfootImage(20, 360);
+        GreenfootImage red = new GreenfootImage(width, height);
         red.setColor(new Color(255, 0, 0, 180));
-        red.fillRect(0, 0, 20, 360);
+        red.fillRect(0, 0, width, height);
         
         setImage(red);
     }

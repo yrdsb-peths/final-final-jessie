@@ -31,11 +31,23 @@ public class GameWorld extends World
         GameOver gameover = new GameOver();
         addObject(gameover, 400, 300);
         Greenfoot.playSound("game-over.mp3");
-        
     }
         
     public void nextLevel()
     {
         
     }
+    
+    public void mouseLocation()
+    {
+        MouseInfo mouse = Greenfoot.getMouseInfo();
+        if(mouse != null)
+        {
+            int x = mouse.getX();
+            int y = mouse.getY();
+             showText("(" + x + ", " + y + ")", 750, 50);
+        }
+    }
+    
+
 }
