@@ -19,12 +19,22 @@ public class Level2 extends GameWorld
         Diamond diamond = new Diamond();
         addObject(diamond, 373, 215);
         
+        //build yellow laser
         YellowLaser yL = new YellowLaser();
         addObject(yL, 240,142);
         yL.setRotation(90);
         
-        RedLaser red1 = new RedLaser(25,450);
-        addObject(red1, 504, 350);
+        //build red lasers
+        RedLaser red1 = new RedLaser(20,450);
+        addObject(red1, 500, 350);
+        RedLaser red2 = new RedLaser(20, 450);
+        addObject(red2, 590, 350);
+        RedLaser red3 = new RedLaser(20, 450);
+        addObject(red3, 680, 350);
+        
+        //add exit
+        Exit exit = new Exit();
+        addObject(exit, 750, 65);
     }
     
     public void act()
@@ -80,9 +90,15 @@ public class Level2 extends GameWorld
     
     public void createRedLaser()
     {
-        RedLaser r1 = new RedLaser(25, 450);
-        addObject(r1, 504,350);
+        RedLaser r1 = new RedLaser(20, 450);
+        addObject(r1, 500,350);
         
-        RedLaser r2 = new RedLaser(25, 450);
+        RedLaser r2 = new RedLaser(20, 450);
+        addObject(r2, 590, 350);
+        
+        RedLaser r3 = new RedLaser(20, 450);
+        addObject(r3, 680, 350);
+        
+        
     }
 }
