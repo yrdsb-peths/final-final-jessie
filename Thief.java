@@ -20,6 +20,7 @@ public class Thief extends Actor
     GreenfootImage[] rightSprites = new GreenfootImage[3];
     private int lives = 3;
     boolean hasTreasure = false;
+    private boolean cageUnlock = false;
     //constructor
     
     public Thief()
@@ -127,9 +128,13 @@ public class Thief extends Actor
     {
         if(isTouching(Diamond.class))
         {
-            removeTouching(Diamond.class);
-            Greenfoot.playSound("collect.mp3");
-            hasTreasure = true;
+            if(getWorld().getObjects(Cage.class).isEmpty() || cageUnlock)
+            {
+                removeTouching(Diamond.class);
+                Greenfoot.playSound("collect.mp3");
+                hasTreasure = true;
+            }
+            
         }
     }
     

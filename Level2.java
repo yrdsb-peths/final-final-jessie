@@ -5,6 +5,7 @@ public class Level2 extends GameWorld
     int yellowLaserTimer = 0;
     int redLaserTimer = 0;
     
+    
     private int timeLeft = 240;
     
     private SimpleTimer countDown = new SimpleTimer();
@@ -35,6 +36,10 @@ public class Level2 extends GameWorld
         //add exit
         Exit exit = new Exit();
         addObject(exit, 750, 65);
+        
+        //add cage
+        Cage cage = new Cage();
+        addObject(cage, 370, 250);
     }
     
     public void act()
