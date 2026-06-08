@@ -40,6 +40,10 @@ public class Level2 extends GameWorld
         //add cage
         Cage cage = new Cage();
         addObject(cage, 370, 250);
+        
+        //add switch
+        Switch swi = new Switch();
+        addObject(swi, 750, 500);
     }
     
     public void act()
