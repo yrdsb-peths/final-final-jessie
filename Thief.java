@@ -57,6 +57,7 @@ public class Thief extends Actor
         animateThief();
         checkLaser();
         checkExit();
+        checkSwitch();
     }
     
     int imageIndex = 0;
@@ -189,6 +190,17 @@ public class Thief extends Actor
         {
             GameWorld world = (GameWorld)getWorld();
             world.nextLevel();
+        }
+    }
+    
+    public void checkSwitch()
+    {
+        if(isTouching(Switch.class) && !cageUnlock)
+        {
+            Cage cage = (Cage)getWorld().getObjects(Cage.class).get(0);
+            getWorld().removeObject(cage);
+            cageUnlock = true;
+            Greenfoot.playSound("unlock-cage.mp3");
         }
     }
 }
