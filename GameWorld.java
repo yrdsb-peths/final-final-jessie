@@ -31,6 +31,7 @@ public class GameWorld extends World
         GameOver gameover = new GameOver();
         addObject(gameover, 400, 300);
         Greenfoot.playSound("game-over.mp3");
+        Greenfoot.stop();
     }
         
     public void nextLevel()

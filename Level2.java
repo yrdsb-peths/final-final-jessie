@@ -49,7 +49,6 @@ public class Level2 extends GameWorld
         Wall wall = new Wall();
         wall.getImage().scale(690,30);
         addObject(wall, 328, 55);
-        //invisible wall around the cage
     }
     
     public void act()
