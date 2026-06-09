@@ -47,6 +47,10 @@ public class Level3 extends GameWorld
         //exit
         Exit exit = new Exit();
         addObject(exit, 338, 66);
+        
+        //camera
+        Camera cam1 = new Camera();
+        addObject(cam1, 570, 150);
     }
     
     public void act()
