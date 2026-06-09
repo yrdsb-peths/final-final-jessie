@@ -40,6 +40,9 @@ public class Level3 extends GameWorld
         Diamond diamond = new Diamond();
         addObject(diamond, 635, 282);
         
+        //npc
+        NPC oldMan = new NPC();
+        addObject(oldMan, 70, 500);
         //cage
         Cage cage = new Cage();
         addObject(cage, 635, 310);

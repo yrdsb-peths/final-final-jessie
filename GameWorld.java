@@ -9,18 +9,27 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class GameWorld extends World
 {
     public static long startTime;
-    
+    private int hintTimer = 0;
+    private Hint hint;
     public GameWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
     }
     
+    
     public GameWorld(int width, int height, int cellSize)
     {
         super(width, height, cellSize);
     }
     
+    public void showHint()
+    {
+        hint = new Hint();
+        addObject(hint, 400, 300);
+        hintTimer = 180;
+        
+    }
     public void gameOver()
     {
         Thief thief = (Thief) getObjects(Thief.class).get(0);

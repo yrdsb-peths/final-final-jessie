@@ -78,7 +78,20 @@ public class Thief extends Actor
     }
     public void checkFakeSwitch()
     {
-        if(isTouching(FakeSwitch.class))
+        if(getWorld().getObjects(FakeSwitch.class).isEmpty())
+        {
+            return;
+        }
+        
+        
+        FakeSwitch fake = (FakeSwitch)getWorld().getObjects(FakeSwitch.class).get(0);
+
+        int dx = getX() - fake.getX();
+        int dy = getY() - fake.getY();
+
+        double distance = Math.sqrt(dx * dx + dy * dy);
+
+        if(distance < 50)
         {
             loseLife();
         }
@@ -160,7 +173,7 @@ public class Thief extends Actor
         if(laser != null && loseLifeTimer.millisElapsed() > 500)
         {
             double x = Math.abs(getX() - laser.getX());
-            int y = Math.abs(getY() - laser.getY());
+            double y = Math.abs(getY() - laser.getY());
             
             boolean touch = false;
             if(laser instanceof RedLaser)
@@ -171,7 +184,7 @@ public class Thief extends Actor
                 touch = (y < 113 && x < 20);
             } else if(laser instanceof YellowLaser)
             {
-                touch = (y < 5);
+                touch = (y < 1.3 && x < 25);
             }
             
             if(touch) {
