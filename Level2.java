@@ -82,7 +82,10 @@ public class Level2 extends GameWorld
         addObject(laser, 240, 142);
         laser.setRotation(90);
     }
-    
+    public void nextLevel()
+    {
+        Greenfoot.setWorld(new Level3());
+    }
     public void updateCountDown(){
         if(countDown.millisElapsed() >= 1000)
         {

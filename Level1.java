@@ -50,6 +50,8 @@ public class Level1 extends GameWorld {
         Wall wall = new Wall();
         wall.getImage().scale(656,23);
         addObject(wall, 328, 62);
+        
+        startTimer();
     }
  
     public void act()

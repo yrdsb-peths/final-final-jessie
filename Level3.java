@@ -5,7 +5,7 @@ public class Level3 extends GameWorld
 {
     int yellowLaserTimer = 0;
     int redLaserTimer = 0;
-    private int timeLeft = 180;
+    private int timeLeft = 120;
     
     private SimpleTimer countDown = new SimpleTimer();
     
@@ -49,8 +49,10 @@ public class Level3 extends GameWorld
         addObject(exit, 338, 66);
         
         //camera
-        Camera cam1 = new Camera();
-        addObject(cam1, 570, 150);
+        Camera c = new Camera();
+        addObject(c, 700, 80);
+        CameraVision v = new CameraVision();
+        addObject(v, 700, 160);
     }
     
     public void act()
@@ -58,7 +60,7 @@ public class Level3 extends GameWorld
         mouseLocation();
         yellowLaserTimer++;
         
-        if(yellowLaserTimer >= 100)
+        if(yellowLaserTimer >= 130)
         {
             shootLaser();
             yellowLaserTimer = 0;
@@ -68,16 +70,23 @@ public class Level3 extends GameWorld
         showText("Lives: " + thief.getLives(), 50, 15);
         
         redLaserTimer++;
-        if(redLaserTimer >= 300)
+        if(redLaserTimer >= 350)
         {
             createRedLaser();
+            createVision();
             redLaserTimer = 0;
+            
         }
         
         updateCountDown();
         
     }
     
+    public void createVision()
+    {
+        CameraVision v1 = new CameraVision();
+        addObject(v1, 700, 160);
+    }
         public void shootLaser()
     {
         YellowLaser laser = new YellowLaser();
@@ -92,14 +101,10 @@ public class Level3 extends GameWorld
     public void createRedLaser()
     {
         RedLaser r1 = new RedLaser(20, 200);
-        addObject(r1, 255,424);
+        addObject(r1, 255,504);
         
-        RedLaser r2 = new RedLaser(20, 450);
-        addObject(r2, 590, 350);
-        
-        RedLaser r3 = new RedLaser(20, 450);
-        addObject(r3, 680, 350);
-        
+        RedLaser r2 = new RedLaser(20, 200);
+        addObject(r2, 440, 504);
         
     }
     
@@ -120,5 +125,8 @@ public class Level3 extends GameWorld
             }
         }
     }
-    
+    public void nextLevel()
+    {
+        Greenfoot.setWorld(new EndScreen());
+    }
 }

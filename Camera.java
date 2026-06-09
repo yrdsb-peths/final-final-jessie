@@ -8,13 +8,13 @@ public class Camera extends Actor
     public Camera()
     {
         GreenfootImage cam = new GreenfootImage("camera.png");
-        cam.scale(300,300);
-        cam.setTransparency(200);
+        cam.scale(70,70);
+        
         setImage(cam);
     }
     public void act()
     {
-        rotate();
+        
     }
     
     public void rotate()

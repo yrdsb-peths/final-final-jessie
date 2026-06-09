@@ -6,14 +6,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class youWin extends Actor
+public class YouWin extends Actor
 {
     /**
      * Act - do whatever the youWin wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    public youWin()
+    public YouWin()
     {
         GreenfootImage win = new GreenfootImage("youWin.png");
         win.scale(300,300);

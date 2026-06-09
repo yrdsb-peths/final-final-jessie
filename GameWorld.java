@@ -8,11 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GameWorld extends World
 {
-
-    /**
-     * Constructor for objects of class GameWorld.
-     * 
-     */
+    public static long startTime;
+    
     public GameWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -38,7 +35,13 @@ public class GameWorld extends World
     {
         
     }
-    
+    public void startTimer()
+     {
+         if(startTime == 0)
+         {
+             startTime = System.currentTimeMillis();
+         }
+     }
     public void mouseLocation()
     {
         MouseInfo mouse = Greenfoot.getMouseInfo();

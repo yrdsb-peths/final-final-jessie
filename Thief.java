@@ -58,6 +58,7 @@ public class Thief extends Actor
         checkLaser();
         checkExit();
         checkSwitch();
+        checkFakeSwitch();
     }
     
     int imageIndex = 0;
@@ -75,7 +76,20 @@ public class Thief extends Actor
             imageIndex = 0;
         }
     }
-    
+    public void checkFakeSwitch()
+    {
+        if(isTouching(FakeSwitch.class))
+        {
+            loseLife();
+        }
+    }
+    public void checkVision()
+    {
+        if(isTouching(CameraVision.class))
+        {
+            loseLife();
+        }
+    }
     public void movement()
     {
         int oldX = getX();
