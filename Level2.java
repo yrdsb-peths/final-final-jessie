@@ -4,7 +4,7 @@ public class Level2 extends GameWorld
 {
     int yellowLaserTimer = 0;
     int redLaserTimer = 0;
-    
+    private int frameCounter = 0;
     
     private int timeLeft = 240;
     
@@ -61,7 +61,12 @@ public class Level2 extends GameWorld
             shootLaser();
             yellowLaserTimer = 0;
         }
-        
+        frameCounter++;
+        if(frameCounter >= 60)
+        {
+            GameWorld.secondsElapsed++;
+            frameCounter = 0;
+        }
         Thief thief = (Thief) getObjects(Thief.class).get(0);
         showText("Lives: " + thief.getLives(), 50, 15);
         

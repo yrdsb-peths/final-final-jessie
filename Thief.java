@@ -59,6 +59,7 @@ public class Thief extends Actor
         checkExit();
         checkSwitch();
         checkFakeSwitch();
+        checkVision();
     }
     
     int imageIndex = 0;
@@ -90,7 +91,7 @@ public class Thief extends Actor
         int dy = getY() - fake.getY();
 
         double distance = Math.sqrt(dx * dx + dy * dy);
-
+        
         if(distance < 50)
         {
             loseLife();
@@ -98,9 +99,23 @@ public class Thief extends Actor
     }
     public void checkVision()
     {
+        if(getWorld().getObjects(CameraVision.class).isEmpty())
+        {
+            return;
+        }
         if(isTouching(CameraVision.class))
         {
-            loseLife();
+            CameraVision v = (CameraVision)getWorld().getObjects(CameraVision.class).get(0);
+        
+            int dx = getX() - v.getX();
+            int dy = getY() - v.getY();
+
+            double distance = Math.sqrt(dx * dx + dy * dy);
+        
+            if(distance < 130)
+            {
+                loseLife();
+            }
         }
     }
     public void movement()

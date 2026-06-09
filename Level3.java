@@ -6,7 +6,7 @@ public class Level3 extends GameWorld
     int yellowLaserTimer = 0;
     int redLaserTimer = 0;
     private int timeLeft = 120;
-    
+    private int frameCounter = 0;
     private SimpleTimer countDown = new SimpleTimer();
     
     public Level3()
@@ -21,7 +21,13 @@ public class Level3 extends GameWorld
         addObject(red1, 255,504);
         RedLaser red2 = new RedLaser(20, 200);
         addObject(red2, 440,504);
-        
+        //wall
+        Wall wall = new Wall();
+        wall.getImage().scale(269,119);
+        addObject(wall, 130, 30);
+        Wall wall2 = new Wall();
+        wall2.getImage().scale(400, 119);
+        addObject(wall2, 600, 30);
         //create yellow laser
         YellowLaser y1 = new YellowLaser();
         addObject(y1, 240, 142);
@@ -56,6 +62,9 @@ public class Level3 extends GameWorld
         addObject(c, 700, 80);
         CameraVision v = new CameraVision();
         addObject(v, 700, 160);
+        //CameraVision v2 = new CameraVision();
+        //v2.setRotation(60);
+        //addObject(v2, 630, 120);
     }
     
     public void act()
@@ -68,7 +77,12 @@ public class Level3 extends GameWorld
             shootLaser();
             yellowLaserTimer = 0;
         }
-        
+        frameCounter++;
+        if(frameCounter >= 60)
+        {
+            GameWorld.secondsElapsed++;
+            frameCounter = 0;
+        }
         Thief thief = (Thief) getObjects(Thief.class).get(0);
         showText("Lives: " + thief.getLives(), 50, 15);
         

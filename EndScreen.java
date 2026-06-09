@@ -11,15 +11,11 @@ public class EndScreen extends World
         YouWin win = new YouWin();
         addObject(win, 400, 300);
         
-        long endTime = System.currentTimeMillis();
-
-        long totalTime = endTime - GameWorld.startTime;
-
-        long seconds = totalTime / 1000;
-        
-        int min = (int) (seconds/ 60);
-        int sec = (int) (seconds % 60);
+        int min = GameWorld.secondsElapsed / 60;
+        int sec = GameWorld.secondsElapsed % 60;
+    
         Label timeUsed = new Label("Time Used: " + min + ":" + sec, 40);
         addObject(timeUsed, 400, 190);
+
     }
 }

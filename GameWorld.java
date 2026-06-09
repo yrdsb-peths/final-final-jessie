@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GameWorld extends World
 {
-    public static long startTime;
+    public static int secondsElapsed = 0;
     private int hintTimer = 0;
     private Hint hint;
     public GameWorld()
@@ -44,13 +44,7 @@ public class GameWorld extends World
     {
         
     }
-    public void startTimer()
-     {
-         if(startTime == 0)
-         {
-             startTime = System.currentTimeMillis();
-         }
-     }
+    
     public void mouseLocation()
     {
         MouseInfo mouse = Greenfoot.getMouseInfo();
@@ -62,5 +56,9 @@ public class GameWorld extends World
         }
     }
     
+    public void startTimer()
+    {
+        secondsElapsed = 0;
+    }
 
 }
