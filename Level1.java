@@ -51,6 +51,7 @@ public class Level1 extends GameWorld {
         wall.getImage().scale(656,23);
         addObject(wall, 328, 62);
         
+        GameWorld.music.playLoop();
         startTimer();
     }
  

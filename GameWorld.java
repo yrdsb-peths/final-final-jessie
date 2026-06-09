@@ -11,6 +11,7 @@ public class GameWorld extends World
     public static int secondsElapsed = 0;
     private int hintTimer = 0;
     private Hint hint;
+    public static GreenfootSound music = new GreenfootSound("the-pink-panther-theme.mp3");
     public GameWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -34,6 +35,7 @@ public class GameWorld extends World
     {
         Thief thief = (Thief) getObjects(Thief.class).get(0);
         showText("Lives: " + thief.getLives(), 50, 15);
+        GameWorld.music.stop();
         GameOver gameover = new GameOver();
         addObject(gameover, 400, 300);
         Greenfoot.playSound("game-over.mp3");

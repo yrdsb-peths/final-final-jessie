@@ -11,6 +11,8 @@ public class EndScreen extends World
         YouWin win = new YouWin();
         addObject(win, 400, 300);
         
+        GameWorld.music.stop();
+        Greenfoot.playSound("win.mp3");
         int min = GameWorld.secondsElapsed / 60;
         int sec = GameWorld.secondsElapsed % 60;
     
