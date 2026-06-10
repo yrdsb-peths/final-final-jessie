@@ -28,6 +28,7 @@ public class Level3 extends GameWorld
         Wall wall2 = new Wall();
         wall2.getImage().scale(400, 119);
         addObject(wall2, 600, 30);
+        
         //create yellow laser
         YellowLaser y1 = new YellowLaser();
         addObject(y1, 240, 142);
@@ -36,7 +37,7 @@ public class Level3 extends GameWorld
         addObject(y2, 444, 142);
         y2.setRotation(90);
         
-        //create real and fake switch
+        //create real and fake switches
         Switch realsw = new Switch();
         addObject(realsw, 300, 515);
         FakeSwitch fakeSw = new FakeSwitch();
@@ -62,9 +63,7 @@ public class Level3 extends GameWorld
         addObject(c, 700, 80);
         CameraVision v = new CameraVision();
         addObject(v, 700, 160);
-        //CameraVision v2 = new CameraVision();
-        //v2.setRotation(60);
-        //addObject(v2, 630, 120);
+        
     }
     
     public void act()

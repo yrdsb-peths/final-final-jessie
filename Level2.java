@@ -53,20 +53,20 @@ public class Level2 extends GameWorld
     
     public void act()
     {
-        mouseLocation();
-        
         yellowLaserTimer++;
         if(yellowLaserTimer >= 100)
         {
             shootLaser();
             yellowLaserTimer = 0;
         }
+        
         frameCounter++;
         if(frameCounter >= 60)
         {
             GameWorld.secondsElapsed++;
             frameCounter = 0;
         }
+        
         Thief thief = (Thief) getObjects(Thief.class).get(0);
         showText("Lives: " + thief.getLives(), 50, 15);
         
@@ -78,7 +78,6 @@ public class Level2 extends GameWorld
         }
         
         updateCountDown();
-        
     }
     
        public void shootLaser()
@@ -91,6 +90,7 @@ public class Level2 extends GameWorld
     {
         Greenfoot.setWorld(new Level3());
     }
+    
     public void updateCountDown(){
         if(countDown.millisElapsed() >= 1000)
         {
@@ -109,6 +109,7 @@ public class Level2 extends GameWorld
         }
     }
     
+    //red lasers reappear
     public void createRedLaser()
     {
         RedLaser r1 = new RedLaser(20, 450);
@@ -119,7 +120,5 @@ public class Level2 extends GameWorld
         
         RedLaser r3 = new RedLaser(20, 450);
         addObject(r3, 680, 350);
-        
-        
     }
 }

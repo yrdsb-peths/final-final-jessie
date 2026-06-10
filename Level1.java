@@ -58,23 +58,24 @@ public class Level1 extends GameWorld {
     public void act()
     {
         yellowLaserTimer++;
-        
+        //shoot yellow lasers
         if(yellowLaserTimer >= 100)
         {
             shootLaser();
             yellowLaserTimer = 0;
         }
         
+        //counting total time used
         frameCounter++;
         if(frameCounter >= 60)
         {
             GameWorld.secondsElapsed++;
             frameCounter = 0;
         }
+        //show thief's life
         Thief thief = (Thief) getObjects(Thief.class).get(0);
         showText("Lives: " + thief.getLives(), 50, 15);
         
-        mouseLocation();
         
         redLaserTimer++;
         // laser disappear & reappear every 8 seconds
