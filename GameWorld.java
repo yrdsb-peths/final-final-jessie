@@ -11,7 +11,7 @@ public class GameWorld extends World
     public static int secondsElapsed = 0;
     private int hintTimer = 0;
     private Hint hint;
-    public static GreenfootSound music = new GreenfootSound("the-pink-panther-theme.mp3");
+    public static GreenfootSound music = new GreenfootSound("the-pink-panther-theme.wav");
     public GameWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
