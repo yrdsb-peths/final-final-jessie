@@ -14,6 +14,11 @@ public class Level2 extends GameWorld
     {
         super(800,600,1);
         
+        GreenfootImage bg = new GreenfootImage("level2.png");
+        bg.scale(800,600);
+        
+        setBackground(bg);
+        
         Thief thief = new Thief();
         addObject(thief, 70, 200);
         

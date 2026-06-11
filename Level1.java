@@ -10,6 +10,11 @@ public class Level1 extends GameWorld {
     public Level1() {
         super(800, 600, 1);
         
+        GreenfootImage bg = new GreenfootImage("museum.png");
+        bg.scale(800,600);
+        
+        setBackground(bg);
+        
         Thief thief = new Thief();
         addObject(thief, 70, 200);
         showText("Lives: " + thief.getLives(), 50, 15);

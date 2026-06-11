@@ -16,6 +16,12 @@ public class Level3 extends GameWorld
         Thief thief = new Thief();
         addObject(thief, 70, 200);
         
+        
+        GreenfootImage bg = new GreenfootImage("level3.png");
+        bg.scale(800,600);
+        
+        setBackground(bg);
+        
         //create red lasers
         RedLaser red1 = new RedLaser(20, 200);
         addObject(red1, 255,504);
